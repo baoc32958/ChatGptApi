@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/wait_layer.css" rel="stylesheet" />
+    <link href="~/Content/select_dropdown.css" rel="stylesheet" />
+    <link href="~/Content/confirm_screen.css" rel="stylesheet" />
+    <link href="~/Content/Shared/_Layout.css?update=20230424" rel="stylesheet" />
+
+    @RenderSection("head", required: false)
+</head>
+
+<body id="id-body-url-gate">
+    <div id="id-header" class="cls-header">
+        @RenderSection("header", required: false)
+    </div>
+
+    <div class="cls-content-full">
+        <div id="id-body" class="cls-div-bd-cnt">
+            @RenderBody()
+        </div>
+
+        <footer id="id-footer" class="cls-footer">
+            @RenderSection("footer", required: false)
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/common.js?update=20230424"></script>
+    <script src="~/Scripts/api/api.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
